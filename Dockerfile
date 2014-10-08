@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install \
   libssl-dev libreadline-dev libdb++-dev
 ENTRYPOINT ["btsx"]
 RUN git clone https://github.com/dacsunlimited/bitsharesx && \
-  (cd bitsharesx && git checkout master && \
+  (cd bitsharesx && git checkout v0.4.20 && \
    git submodule update --init && cmake . && make -j && \
    install programs/client/bitshares_client /usr/local/bin/btsx) && \
   rm -r bitsharesx
